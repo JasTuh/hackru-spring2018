@@ -21,11 +21,6 @@ export default class UserMenu extends Component {
     if (!this.state.playlists.items) {
       return (<div />);
     }
-    // const row = () => <div class="row">;
-    // const col = () => <div class="col-md-3">;
-    // let x = 0;
-
-    // for (var i = 0; i < this.state.playlists.items.length; i++)
 
     const listItems = this.state.playlists.items.map((playlist) =>
       <AlbumSquare playlist={playlist} childClass="col-md-3"/>
