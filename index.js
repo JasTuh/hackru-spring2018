@@ -104,6 +104,20 @@ function checkForCookies(req, res) {
     handle(req, res);
   }
 }
+
+function newPlaylist(req, res) {
+  console.log("test");
+  const user = req.cookies.user;
+
+  var SpotifyWebApi = require('spotify-web-api-node')
+  var spotifyApi = new SpotifyWebApi({
+    clientId : keys.client_id,
+    clientSecret : keys.client_secret
+  });
+  spotifyApi.setAccessToken(user);
+  return spotifyApi.getMe();
+}
+
 co(function* () {
   yield app.prepare();
   const server = express();
@@ -111,6 +125,7 @@ co(function* () {
   server.use(body.json());
   server.get('/login', login);
   server.get('/handleLogin', handleLogin);
+  server.get('/newPlaylist', newPlaylist);
   server.get('/logout', handleLogout);
   server.get('/', checkForCookies);
   server.get('*', (req, res) => handle(req, res));
