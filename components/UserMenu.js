@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import getPlaylists from '../utils/getPlaylists';
-import getTracksOfPlaylist from '../utils/getTracksOfPlaylist';
 
 export default class UserMenu extends Component {
   constructor(props) {
@@ -11,16 +9,14 @@ export default class UserMenu extends Component {
     };
   }
   componentDidMount() {
-    getPlaylists(this.props.url.query.accessToken).then((res) => {
-      console.log(res);
-      this.setState({
-        playlists: res,
-      });
-    });
+    fetch('http://localhost:3000/newPlaylist', {credentials: "same-origin"})
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        this.setState({playlists:json});
+      })
+      .catch((err) => {console.log(err)});
   }
-
-
-
   render() {
     if (!this.state.playlists.items) {
       return (<div />);
@@ -51,7 +47,7 @@ return (
   );
 } 
 function AlbumImage(props) {
-    if (!props.playlist.images) {
+    if (props.playlist === undefined || !props.playlist.images) {
       return <div />
     } else {
       return <img src={props.playlist.images[0].url} className="playlistImage"/>

@@ -1,12 +1,12 @@
 const body = require('body-parser');
 const co = require('co');
 const express = require('express');
-const next = require('next');
-const mysql = require('mysql');
+const next = require('next'); const mysql = require('mysql');
 const querystring = require('querystring');
 const keys = require('./keys.json');
 const request = require('request');
 const cookieParser = require('cookie-parser');
+const SpotifyWebApi = require('spotify-web-api-node')
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -86,7 +86,7 @@ function handleLogin(req, res) {
   request.post(authOptions, (error, response, data) => {
     const accessToken = data.access_token;
     const refreshToken = data.refresh_token;
-    insertUserIntoDB(accessToken, refreshToken);
+    //insertUserIntoDB(accessToken, refreshToken);
     res.cookie('user', accessToken);
     res.redirect(`/userLoggedIn?${querystring.stringify({ accessToken, refreshToken })}`);
   });
@@ -106,16 +106,16 @@ function checkForCookies(req, res) {
 }
 
 function newPlaylist(req, res) {
-  console.log("test");
   const user = req.cookies.user;
-
-  var SpotifyWebApi = require('spotify-web-api-node')
+  console.log(user);
   var spotifyApi = new SpotifyWebApi({
     clientId : keys.client_id,
     clientSecret : keys.client_secret
   });
   spotifyApi.setAccessToken(user);
-  return spotifyApi.getMe();
+  spotifyApi.getMe()
+    .then((data) => {res.send(JSON.stringify(data))})
+    .catch((err) => {console.log(err)});
 }
 
 co(function* () {
