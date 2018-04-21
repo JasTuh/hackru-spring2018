@@ -1,58 +1,26 @@
-# Express React Starter
+# Flask-React-Boilerplate
+This project has been developped in order to gather best practices at
+ - **Building React Single Page Applications** that allow to fetch data from Web APIs
+ - **Building Python Flask REST APIs** that efficiently and safely expose data to the Web
 
-This is a template for using Express and React in the same project. It is based on Create React App.
+This project is intended for developpers who desire to accomodate with React and/or Flask technologies. It covers a large panel of librairies and aims to include best practices at developping robust Web Applications.
 
-Read the article: [Introducing Express React Starter](https://medium.com/burke-knows-words/introducing-express-react-starter-b6d299206a3a)
+This boilerplate is made of 2 independant projects one for React Single Page Application and one for Python Flask API. A reader interested in only one of these 2 technologies can totally give focus on it without meeting any misunderstanding. Nevertheless both projects are designed to be compatible.
 
-OR...
+## Packages
+### React
+ - [Create-React-App](https://github.com/facebookincubator/create-react-app) - Facebook project intended to easily package React Applications
+ - [Redux](https://github.com/reactjs/redux) - Very popular package that allows proper Application State management
+ - [React-Router](https://github.com/ReactTraining/react-router) - Package that allows to dynamically manage Applications Route
+ - [Redux-Saga](https://github.com/redux-saga/redux-saga) - Package that properly handles side effects (e.g. asynchronous fetch calls)
+ - [Redux-Form](https://github.com/erikras/redux-form) - Package that allows to easily synchonize forms and Redux state
+ - [Material-UI](https://github.com/callemall/material-ui) - Library of  React components that implements *Google Material Design* specification
 
-## Prerequisites
-* [create-react-app](https://github.com/facebookincubator/create-react-app)
-
-## Installing
-
-```bash
-git clone 'this-repo-url' app-name
-cd app-name
-npm install
-```
-
-## Running The App
-
-The template can be run in development, or in production. For development, use the following workflow.
-
-### Start the Express Server
-
-```bash
-node server/server.js
-```
-
-### Start Create React App
-
-In a different terminal tab...
-
-```bash
-npm start
-```
-
-![Imgur](http://i.imgur.com/f7Nlvx4.png)
-
-The "Welcome to React" is a message that comes from the Express server. 
-
-### What Is Happening Here?
-
-Create React App and the Express server are running on different processes. This is so that React can still use in memory Webpack to do hot reloads really fast.
-
-All AJAX/fetch requests to `/api` are sent back to the Express server which is serving all `/api` routes from the `routes/index.js` file. This is done via a proxy setup in the `package.json` file.
-
-## Building For Production
-
-In production, you want Express to serve up your app.
-
-### Build React App
-
-```bash
-npm build
-```
-
-Now simply visit the Express app at 'http://localhost:3001' and you will see your app served from the 'build' folder. That's all there is to it!
+### Python
+ - [Flask](https://github.com/pallets/flask) - Python microframework for Web development.
+ - [Flask-RESTful](https://github.com/flask-restful/flask-restful) - Flask extension that allows to easily expose REST APIs
+ - [Flask-Login](https://github.com/maxcountryman/flask-login) - Flask extension that manages user session (login, logout, etc.)
+ - [Flask-WTF](https://github.com/lepture/flask-wtf) - Flask extension that allows to handle forms. It also includes CSRF protection
+ - [SQLAlchemy](https://github.com/zzzeek/sqlalchemy) - Object Relationship Mapper (ORM) that allows easy dialog with SQL databases
+ - [Marshmallow](https://github.com/marshmallow-code/marshmallow) - Convenient package to serialize/deserialize Python objects into json format
+ - [Flask-Script](https://github.com/smurfix/flask-script) - Convenient Flask extension that allows to implement CLI commands
