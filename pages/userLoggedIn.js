@@ -3,7 +3,7 @@ import Page from '../layouts/main';
 import UserMenu from '../components/UserMenu';
 
 var makingPlaylist= false; 
-export default class userLoggedIn {
+export default class userLoggedIn extends React.Component{
 
   componentDidMount(){
     fetch('/newPlaylist').then(res => {console.log(res)})
@@ -28,7 +28,7 @@ export default class userLoggedIn {
           <p>
             {makingPlaylist}
           </p>
-          <UserMenu url={props.url} />
+          <UserMenu url={this.props.url} />
         </Page>
     ) 
   }
