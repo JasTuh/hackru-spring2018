@@ -1,0 +1,34 @@
+/*
+ * General Styling Section
+ */
+.footer {
+  background: #95a5a6;
+  height:30px;
+  margin-bottom:0px;
+}
+
+/*
+ * Welcome Page Styling Section
+ */
+.welcomeText {
+  padding-top: 5%;
+  font-size: 400%;
+}
+.welcomeContainer {
+  margin: 0;
+  height: 400px;
+  background: #e74c3c;
+  width: 100%;
+}
+.welcomeLoginButton {
+  padding: 10px;
+  margin: 25px;
+}
+.welcomeAboutUsContainer {
+  height: 100%;
+  background: #3498db;
+}
+.welcomeAboutUsInnerContainer {
+  width: 80%;
+}
+
