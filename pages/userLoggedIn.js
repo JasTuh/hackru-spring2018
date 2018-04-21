@@ -4,7 +4,10 @@ import UserMenu from '../components/UserMenu';
 
 var makingPlaylist= false; 
 export default class userLoggedIn {
-  
+
+  componentDidMount(){
+    fetch('/newPlaylist').then(res => {console.log(res)})
+  }
   render() {
     return (
       <Page>
