@@ -32,3 +32,16 @@
   width: 80%;
 }
 
+.playlistImage {
+  height: 250px;
+  width: 287px;
+  padding-left: 37px;
+}
+
+.playlistName {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+
+

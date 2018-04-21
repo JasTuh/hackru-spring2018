@@ -21,7 +21,8 @@
     "next": "^3.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "spotify-web-api-node": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^4.4.1",

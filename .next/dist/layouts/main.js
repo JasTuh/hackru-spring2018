@@ -18,7 +18,7 @@ var _footer2 = _interopRequireDefault(_footer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _jsxFileName = '/Users/jasontuhy/projects/spotify-playlist-manager/layouts/main.js';
+var _jsxFileName = '/Users/katherinethai/Development/hackRU/hackru-spring2018/layouts/main.js';
 
 exports.default = function (_ref) {
   var children = _ref.children;
@@ -32,10 +32,6 @@ exports.default = function (_ref) {
       fileName: _jsxFileName,
       lineNumber: 5
     }
-  }), children, _react2.default.createElement(_footer2.default, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    }
-  }));
+  }), children);
 };
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxheW91dHMvbWFpbi5qcyJdLCJuYW1lcyI6WyJIZWFkZXIiLCJGb290ZXIiLCJjaGlsZHJlbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBLEFBQU87Ozs7QUFDUCxBQUFPLEFBQ1A7Ozs7Ozs7O2tCQUFlLGdCQUFBO01BQUEsQUFBRyxnQkFBSCxBQUFHO3lCQUNoQixjQUFBOztnQkFBQTtrQkFBQSxBQUNFO0FBREY7QUFBQSxHQUFBLGtCQUNFLEFBQUM7O2dCQUFEO2tCQURGLEFBQ0UsQUFDRTtBQURGO0FBQUEsTUFGVyxBQUNiO0FBREYiLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIvVXNlcnMva2F0aGVyaW5ldGhhaS9EZXZlbG9wbWVudC9oYWNrUlUvaGFja3J1LXNwcmluZzIwMTgifQ==

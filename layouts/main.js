@@ -4,6 +4,5 @@ export default ({ children }) => (
   <div>
     <Header />
     { children }
-    <Footer />
   </div>
 )
