@@ -8,6 +8,12 @@ export default class userLoggedIn extends React.Component{
   componentDidMount(){
     fetch('/newPlaylist').then(res => {console.log(res)})
   }
+  MergeTest() {
+    fetch('/mergePlaylists', {
+      method: 'POST',
+      body: JSON.stringify({playlists:[1,2,3,4,5,6]})
+    }); 
+  }
   render() {
     return (
       <Page>
@@ -29,6 +35,9 @@ export default class userLoggedIn extends React.Component{
             {makingPlaylist}
           </p>
           <UserMenu url={this.props.url} />
+          <button onclick={this.MergeTest}>
+            Activate Lasers
+          </button>
         </Page>
     ) 
   }
