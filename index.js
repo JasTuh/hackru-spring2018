@@ -114,7 +114,11 @@ function newPlaylist(req, res) {
   });
   spotifyApi.setAccessToken(user);
   spotifyApi.getMe()
-    .then((data) => {res.send(JSON.stringify(data))})
+    .then((data) => {
+      spotifyApi.getUserPlaylists(data.body.id).then((data2) => {
+        console.log(data2);
+        res.send(JSON.stringify(data2))})
+      })
     .catch((err) => {console.log(err)});
 }
 

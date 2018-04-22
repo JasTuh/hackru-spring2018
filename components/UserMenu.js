@@ -13,7 +13,7 @@ export default class UserMenu extends Component {
       .then(res => res.json())
       .then(json => {
         console.log(json);
-        this.setState({playlists:json});
+        this.setState({playlists:json.body});
       })
       .catch((err) => {console.log(err)});
   }
@@ -42,7 +42,7 @@ return (
   );
 } 
 function AlbumImage(props) {
-    if (props.playlist === undefined || !props.playlist.images) {
+    if (props.playlist === undefined || !props.playlist.images || props.playlist.images.length === 0) {
       return <div />
     } else {
       return <img src={props.playlist.images[0].url} className="playlistImage"/>
