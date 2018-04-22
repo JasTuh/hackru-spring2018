@@ -30,9 +30,6 @@ export default class userLoggedIn extends React.Component{
             {makingPlaylist}
           </p>
           <UserMenu url={this.props.url} />
-          <button onClick={this.MergeTest}>
-            wheeee
-          </button>
         </Page>
     ) 
   }

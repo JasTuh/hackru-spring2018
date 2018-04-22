@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import $ from 'jquery';
 
 export default class UserMenu extends Component {
   constructor(props) {
@@ -61,7 +60,7 @@ export default class UserMenu extends Component {
       <div className="outerPlaylistBlock">
         {listItems}
        <button onClick={this.merge}>
-            wheeee
+           submit 
         </button>
       </div>
     );
