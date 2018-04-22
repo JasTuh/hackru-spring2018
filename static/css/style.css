@@ -1,3 +1,20 @@
+.checkmark{
+  opacity: 0;
+  position: relative;
+  top: 90px;
+  right: -200px;
+}
+
+.selected .checkmark{
+  opacity: 1 !important;
+  border: none !important;
+  z-index: 999999999999;
+}
+
+.checkmark{
+  width: 75px;
+}
+
 /*
  * General Styling Section
  */
@@ -43,18 +60,19 @@
   text-align: center;
 }
 
-.playlistBlock {
-  opacity: .6;
+.playlistBlock .playlistImage {
+  opacity: .5;
 }
 
-.playlistBlock:hover{
+.playlistBlock  .playlistImage:hover{
   opacity: 1;
   cursor: pointer;
 }
 
-.selected {
-  border: 3px solid #33FF33;
-  border-radius: 10px;
+.selected  .playlistImage {
   opacity: 1;
 }
 
+.selected .playlistImage{
+    filter: blur(1px);
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
+import $ from 'jquery';
 
 export default class UserMenu extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ export default class UserMenu extends Component {
       <AlbumSquare key={playlist.id} playlist={playlist} selected={this.state.selectedPlaylists.includes(playlist.id)} clickedMethod={this.selectPlaylist(playlist.id)} childClass="col-md-3"/>
     );
     return (
-      <div>
+      <div className="outerPlaylistBlock">
         {listItems}
       </div>
     );
@@ -57,6 +58,7 @@ function AlbumSquare(props){
   }
 return (
   <div className={className} onClick={props.clickedMethod}>
+    <img className="checkmark" src="static/img/green-check.png"/>
     <AlbumImage playlist = {props.playlist}/>
     <h3 className="playlistName">{props.playlist.name}</h3>
   </div>
