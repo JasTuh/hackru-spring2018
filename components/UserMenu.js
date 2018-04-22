@@ -24,14 +24,14 @@ export default class UserMenu extends Component {
     merge() {
       console.log(this.state.selectedPlaylists);
     fetch('http://localhost:3000/mergePlaylists', {
-      method:'POST', 
+      method:'POST',
       body:JSON.stringify({playlists:this.state.selectedPlaylists}),
       credentials: 'same-origin',
       headers: {
       'user-agent': 'Mozilla/4.0 MDN Example',
       'content-type': 'application/json'
       },
-    }); 
+    });
   }
 
   selectPlaylist(playlist) {
@@ -40,7 +40,7 @@ export default class UserMenu extends Component {
       var index = this.state.selectedPlaylists.indexOf(playlist);
       if (index > -1) {
         this.state.selectedPlaylists.splice(index,1);
-      }//remove it 
+      }//remove it
       else {
         this.state.selectedPlaylists.push(playlist);
       }
@@ -59,9 +59,9 @@ export default class UserMenu extends Component {
     return (
       <div className="outerPlaylistBlock">
         {listItems}
-       <button onClick={this.merge}>
-           submit 
-        </button>
+       <a id="bMerge" onClick={this.merge}>
+           Merge
+       </a>
       </div>
     );
   }
@@ -79,7 +79,7 @@ return (
     <h3 className="playlistName">{props.playlist.name}</h3>
   </div>
   );
-} 
+}
 
 function AlbumImage(props) {
     if (props.playlist === undefined || !props.playlist.images || props.playlist.images.length === 0) {

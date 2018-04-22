@@ -1,50 +1,77 @@
-.checkmark{
+#bMerge {
+  border-radius: 100%;
+  height: 66px;
+  text-align: center;
+  color: white;
+  border: 3px solid #3d7df5;
+  background-color: #3d7df5;
+  line-height: 3.6;
+  position: fixed;
+  font-weight: bold;
+  right: 10px;
+  top: 60px;
+  width: 60px;
+  height: 57px;
+  text-decoration: none;
+}
+
+#bMerge:hover {
+  cursor: pointer;
+}
+
+.checkmark {
   opacity: 0;
   position: relative;
   top: 90px;
   right: -200px;
 }
 
-.selected .checkmark{
+.selected .checkmark {
   opacity: 1 !important;
   border: none !important;
   z-index: 999999999999;
 }
 
-.checkmark{
+.checkmark {
   width: 75px;
 }
 
 /*
  * General Styling Section
  */
+
 .footer {
   background: #95a5a6;
-  height:30px;
-  margin-bottom:0px;
+  height: 30px;
+  margin-bottom: 0px;
 }
 
 /*
  * Welcome Page Styling Section
  */
+
 .welcomeText {
   padding-top: 5%;
   font-size: 400%;
 }
+
 .welcomeContainer {
   margin: 0;
   height: 400px;
   background: #e74c3c;
   width: 100%;
 }
+
 .welcomeLoginButton {
   padding: 10px;
   margin: 25px;
 }
+
 .welcomeAboutUsContainer {
   height: 100%;
   background: #3498db;
 }
+
 .welcomeAboutUsInnerContainer {
   width: 80%;
 }
@@ -64,15 +91,15 @@
   opacity: .5;
 }
 
-.playlistBlock  .playlistImage:hover{
+.playlistBlock .playlistImage:hover {
   opacity: 1;
   cursor: pointer;
 }
 
-.selected  .playlistImage {
+.selected .playlistImage {
   opacity: 1;
 }
 
-.selected .playlistImage{
-    filter: blur(1px);
+.selected .playlistImage {
+  filter: blur(1px);
 }
