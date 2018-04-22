@@ -58,6 +58,7 @@
 .playlistName {
   padding-bottom: 10px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .playlistBlock .playlistImage {

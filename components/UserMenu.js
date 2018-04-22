@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import $ from 'jquery';
 
 export default class UserMenu extends Component {
   constructor(props) {
