@@ -6,6 +6,5 @@ import AboutUs from '../components/AboutUs';
 export default () => (
   <Page>
     <WelcomeTitle />
-    <AboutUs />
   </Page>
 );

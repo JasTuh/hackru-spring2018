@@ -15,6 +15,21 @@
   text-decoration: none;
 }
 
+#mainContainer {
+  width: 600px;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+#spotifly {
+  width: 250px;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 #bMerge:hover {
   cursor: pointer;
 }
@@ -51,20 +66,22 @@
  */
 
 .welcomeText {
-  padding-top: 5%;
+  padding-top: 10px;
   font-size: 400%;
 }
 
 .welcomeContainer {
   margin: 0;
   height: 400px;
-  background: #e74c3c;
+  background: white;
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .welcomeLoginButton {
   padding: 10px;
   margin: 25px;
+  margin-bottom: 10px !important;
 }
 
 .welcomeAboutUsContainer {
@@ -85,6 +102,7 @@
 .playlistName {
   padding-bottom: 10px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .playlistBlock .playlistImage {

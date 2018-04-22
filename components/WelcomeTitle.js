@@ -6,14 +6,13 @@ export default () => (
   <div className="container-full welcomeContainer">
     <div className="row">
       <div className="center-block text-center">
-        <h1 className="welcomeText">
-          Spotify Playlist Manager
-        </h1>
-      </div>
-    </div>
-    <div className="container">
-      <div className="center-block text-center">
-        <Login />
+        <div className="container" id="mainContainer">
+          <img src="/static/img/spotifly.png" id="spotifly" />
+          <h1 className="welcomeText">
+            Spoti<i>fly</i>
+          </h1>
+          <Login />
+        </div>
       </div>
     </div>
   </div>
