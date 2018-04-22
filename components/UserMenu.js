@@ -73,7 +73,7 @@ function AlbumSquare(props){
     className = className + ' selected';
   }
 return (
-  <div className={className} onClick={props.clickedMethod}>
+  <div className={className}>
     <img className="checkmark" src="static/img/green-check.png"/>
     <AlbumImage playlist = {props.playlist}/>
     <h3 className="playlistName">{props.playlist.name}</h3>
@@ -85,6 +85,6 @@ function AlbumImage(props) {
     if (props.playlist === undefined || !props.playlist.images || props.playlist.images.length === 0) {
       return <div />
     } else {
-      return <img src={props.playlist.images[0].url} className="playlistImage"/>
+      return <img src={props.playlist.images[0].url} className="playlistImage" onClick={props.clickedMethod}/>
     }
   }
