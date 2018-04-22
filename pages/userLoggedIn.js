@@ -5,6 +5,9 @@ import UserMenu from '../components/UserMenu';
 var makingPlaylist= false; 
 export default class userLoggedIn extends React.Component{
 
+  MergeTest() {
+    fetch('http://localhost:3000/mergePlaylists', {method:'POST', body:JSON.stringify([1,2,3,4,5])}); 
+  }
   render() {
     return (
       <Page>
@@ -26,6 +29,9 @@ export default class userLoggedIn extends React.Component{
             {makingPlaylist}
           </p>
           <UserMenu url={this.props.url} />
+          <button onClick={this.MergeTest}>
+            wheeee
+          </button>
         </Page>
     ) 
   }
