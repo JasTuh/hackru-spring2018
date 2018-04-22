@@ -63,9 +63,9 @@ export default class UserMenu extends Component {
     );
     return (
       <div className="outerPlaylistBlock">
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="nameForm">
         <label>
-          Playlist Name:
+          <h3>Playlist Name:</h3>
           <input type="text" value={this.state.playlistName} onChange={this.handleNameChange} />
         </label>
       </form>

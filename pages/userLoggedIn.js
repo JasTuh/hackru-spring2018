@@ -15,7 +15,7 @@ export default class userLoggedIn extends React.Component{
           <nav className="navbar navbar-default userNavBar">
             <div className="container-fluid">
               <div className="navbar-header">
-                <a className="navbar-brand" href="#">Spotify Playlist Manager</a>
+                <a className="navbar-brand" href="#">Spotify Playlist Merger</a>
               </div>
               <ul className="nav navbar-nav navbar-right">
                 <li><a href="/logout">Log Out</a></li>

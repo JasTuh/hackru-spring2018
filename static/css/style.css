@@ -1,18 +1,19 @@
 #bMerge {
   border-radius: 100%;
-  height: 66px;
   text-align: center;
   color: white;
   border: 3px solid #3d7df5;
   background-color: #3d7df5;
-  line-height: 3.6;
+  line-height: 4.4;
   position: fixed;
   font-weight: bold;
   right: 10px;
   top: 60px;
-  width: 60px;
-  height: 57px;
+  height: 93px;
+  width: 120px;
   text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15pt;
 }
 
 #mainContainer {
@@ -24,6 +25,7 @@
 
 #spotifly {
   width: 250px;
+  padding-top: 13px;
 }
 
 html {
@@ -32,6 +34,8 @@ html {
 
 #bMerge:hover {
   cursor: pointer;
+  background-color: #00acee;
+  border: #00acee;
 }
 
 .checkmark {
@@ -82,6 +86,7 @@ html {
   padding: 10px;
   margin: 25px;
   margin-bottom: 10px !important;
+  background-color: #3d7df5 !important;
 }
 
 .welcomeAboutUsContainer {
@@ -121,3 +126,23 @@ html {
 .selected .playlistImage {
   filter: blur(1px);
 }
+
+.nameForm {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+  background-color: #6AE368 !important;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-default .navbar-brand {
+  color: #191414 !important;
+}
+
+.navbar-default .navbar-nav a{
+  color: #191414 !important;
+}
+
+
