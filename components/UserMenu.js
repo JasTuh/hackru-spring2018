@@ -5,11 +5,13 @@ export default class UserMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      playlistName: "",
       playlists: [],
       selectedPlaylists: [],
     };
-    this.selectPlaylist = this.selectPlaylist.bind(this)
-    this.merge = this.merge.bind(this)
+    this.selectPlaylist = this.selectPlaylist.bind(this);
+    this.merge = this.merge.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
   }
   componentDidMount() {
     fetch('http://localhost:3000/newPlaylist', {credentials: "same-origin"})
@@ -25,7 +27,7 @@ export default class UserMenu extends Component {
       console.log(this.state.selectedPlaylists);
     fetch('http://localhost:3000/mergePlaylists', {
       method:'POST',
-      body:JSON.stringify({playlists:this.state.selectedPlaylists}),
+      body:JSON.stringify({playlists:this.state.selectedPlaylists, playlistName:this.state.playlistName}),
       credentials: 'same-origin',
       headers: {
       'user-agent': 'Mozilla/4.0 MDN Example',
@@ -48,6 +50,9 @@ export default class UserMenu extends Component {
     }
   }
 
+  handleNameChange(e){
+    this.setState({playlistName: e.target.value});
+  }
   render() {
     if (!this.state.playlists.items) {
       return (<div />);
@@ -58,6 +63,12 @@ export default class UserMenu extends Component {
     );
     return (
       <div className="outerPlaylistBlock">
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Playlist Name:
+          <input type="text" value={this.state.playlistName} onChange={this.handleNameChange} />
+        </label>
+      </form>
         {listItems}
        <a id="bMerge" onClick={this.merge}>
            Merge

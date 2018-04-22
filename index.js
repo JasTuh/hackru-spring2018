@@ -10,7 +10,7 @@ const SpotifyWebApi = require('spotify-web-api-node')
 var spotifyApi = new SpotifyWebApi({
     clientId : keys.client_id,
     clientSecret : keys.client_secret
-  });
+});
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -154,7 +154,7 @@ function makePlaylist(allSongs, userID, name) {
 function mergePlaylists(req, res) {
   const playlists = req.body.playlists;
   const user = req.cookies.user;
-  
+  const playlistName = req.body.playlistName; 
   spotifyApi.setAccessToken(user);
   spotifyApi.getMe()
     .then((data) => {
@@ -169,7 +169,7 @@ function mergePlaylists(req, res) {
         }) 
         return allSongs;
       }).then(allSongs => allSongs.map(song => song.track.uri))
-        .then(allSongs => {makePlaylist(allSongs, userID, 'test');})
+        .then(allSongs => {makePlaylist(allSongs, userID, playlistName);})
         .catch((err) => {console.log(err);});
     })
     .catch((err) => {console.log(err)});
