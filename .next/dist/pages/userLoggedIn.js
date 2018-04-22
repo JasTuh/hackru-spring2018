@@ -85,48 +85,27 @@ var userLoggedIn = function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 18
         }
-      }, 'Spotify Playlist Manager')), _react2.default.createElement('ul', { className: 'nav navbar-nav', __source: {
+      }, 'Spotify Playlist Manager')), _react2.default.createElement('ul', { className: 'nav navbar-nav navbar-right', __source: {
           fileName: _jsxFileName,
           lineNumber: 20
-        }
-      }, _react2.default.createElement('li', { className: 'active', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        }
-      }, _react2.default.createElement('a', { href: '#', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        }
-      }, 'Home')), _react2.default.createElement('li', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        }
-      }, _react2.default.createElement('a', { href: '#', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        }
-      }, 'New Playlist'))), _react2.default.createElement('ul', { className: 'nav navbar-nav navbar-right', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
         }
       }, _react2.default.createElement('li', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 21
         }
       }, _react2.default.createElement('a', { href: '/logout', __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 21
         }
       }, 'Log Out'))))), _react2.default.createElement('p', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 25
         }
       }, makingPlaylist), _react2.default.createElement(_UserMenu2.default, { url: this.props.url, __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 28
         }
       }));
     }
@@ -136,4 +115,4 @@ var userLoggedIn = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = userLoggedIn;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL3VzZXJMb2dnZWRJbi5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsIlBhZ2UiLCJVc2VyTWVudSIsIm1ha2luZ1BsYXlsaXN0IiwidXNlckxvZ2dlZEluIiwiZmV0Y2giLCJtZXRob2QiLCJib2R5IiwicHJvcHMiLCJ1cmwiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLEFBQU87Ozs7QUFDUCxBQUFPOzs7O0FBQ1AsQUFBTzs7Ozs7Ozs7O0FBR1AsSUFBSSxpQkFBSixBQUFvQjs7SSxBQUNDOzs7Ozs7Ozs7OztnQ0FFUCxBQUNWO1lBQUEsQUFBTSx3Q0FBd0MsRUFBQyxRQUFELEFBQVEsUUFBUSxNQUFLLHlCQUFlLENBQUEsQUFBQyxHQUFELEFBQUcsR0FBSCxBQUFLLEdBQUwsQUFBTyxHQUF6RixBQUE4QyxBQUFxQixBQUFlLEFBQVMsQUFDNUY7Ozs7NkJBQ1EsQUFDUDs2QkFDRSxBQUFDOztvQkFBRDtzQkFBQSxBQUNJO0FBREo7QUFBQSxPQUFBLGtCQUNJLGNBQUEsU0FBSyxXQUFMLEFBQWU7b0JBQWY7c0JBQUEsQUFDRTtBQURGO3lCQUNFLGNBQUEsU0FBSyxXQUFMLEFBQWU7b0JBQWY7c0JBQUEsQUFDRTtBQURGO3lCQUNFLGNBQUEsU0FBSyxXQUFMLEFBQWU7b0JBQWY7c0JBQUEsQUFDRTtBQURGO3lCQUNFLGNBQUEsT0FBRyxXQUFILEFBQWEsZ0JBQWUsTUFBNUIsQUFBaUM7b0JBQWpDO3NCQUFBO0FBQUE7U0FGSixBQUNFLEFBQ0UsQUFFRiw4Q0FBQSxjQUFBLFFBQUksV0FBSixBQUFjO29CQUFkO3NCQUFBLEFBQ0U7QUFERjt5QkFDRSxjQUFBLFFBQUksV0FBSixBQUFjO29CQUFkO3NCQUFBLEFBQXVCO0FBQXZCO3lCQUF1QixjQUFBLE9BQUcsTUFBSCxBQUFRO29CQUFSO3NCQUFBO0FBQUE7U0FEekIsQUFDRSxBQUF1QixBQUN2QiwwQkFBQSxjQUFBOztvQkFBQTtzQkFBQSxBQUFJO0FBQUo7QUFBQSx5QkFBSSxjQUFBLE9BQUcsTUFBSCxBQUFRO29CQUFSO3NCQUFBO0FBQUE7U0FOUixBQUlFLEFBRUUsQUFBSSxBQUVOLG1DQUFBLGNBQUEsUUFBSSxXQUFKLEFBQWM7b0JBQWQ7c0JBQUEsQUFDRTtBQURGO3lCQUNFLGNBQUE7O29CQUFBO3NCQUFBLEFBQUk7QUFBSjtBQUFBLHlCQUFJLGNBQUEsT0FBRyxNQUFILEFBQVE7b0JBQVI7c0JBQUE7QUFBQTtTQVhkLEFBQ0ksQUFDRSxBQVFFLEFBQ0UsQUFBSSxBQUlWLGdDQUFBLGNBQUE7O29CQUFBO3NCQUFBLEFBQ0c7QUFESDtBQUFBLFNBZkosQUFlSSxBQUdBLGlDQUFBLEFBQUMsb0NBQVMsS0FBSyxLQUFBLEFBQUssTUFBcEIsQUFBMEI7b0JBQTFCO3NCQW5CTixBQUNFLEFBa0JJLEFBR1A7QUFITzs7Ozs7O0VBekJnQyxnQkFBTSxBOztrQkFBM0IsQSIsImZpbGUiOiJ1c2VyTG9nZ2VkSW4uanM/ZW50cnkiLCJzb3VyY2VSb290IjoiL1VzZXJzL2thdGhlcmluZXRoYWkvRGV2ZWxvcG1lbnQvaGFja1JVL2hhY2tydS1zcHJpbmcyMDE4In0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL3VzZXJMb2dnZWRJbi5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsIlBhZ2UiLCJVc2VyTWVudSIsIm1ha2luZ1BsYXlsaXN0IiwidXNlckxvZ2dlZEluIiwiZmV0Y2giLCJtZXRob2QiLCJib2R5IiwicHJvcHMiLCJ1cmwiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLEFBQU87Ozs7QUFDUCxBQUFPOzs7O0FBQ1AsQUFBTzs7Ozs7Ozs7O0FBR1AsSUFBSSxpQkFBSixBQUFvQjs7SSxBQUNDOzs7Ozs7Ozs7OztnQ0FFUCxBQUNWO1lBQUEsQUFBTSx3Q0FBd0MsRUFBQyxRQUFELEFBQVEsUUFBUSxNQUFLLHlCQUFlLENBQUEsQUFBQyxHQUFELEFBQUcsR0FBSCxBQUFLLEdBQUwsQUFBTyxHQUF6RixBQUE4QyxBQUFxQixBQUFlLEFBQVMsQUFDNUY7Ozs7NkJBQ1EsQUFDUDs2QkFDRSxBQUFDOztvQkFBRDtzQkFBQSxBQUNJO0FBREo7QUFBQSxPQUFBLGtCQUNJLGNBQUEsU0FBSyxXQUFMLEFBQWU7b0JBQWY7c0JBQUEsQUFDRTtBQURGO3lCQUNFLGNBQUEsU0FBSyxXQUFMLEFBQWU7b0JBQWY7c0JBQUEsQUFDRTtBQURGO3lCQUNFLGNBQUEsU0FBSyxXQUFMLEFBQWU7b0JBQWY7c0JBQUEsQUFDRTtBQURGO3lCQUNFLGNBQUEsT0FBRyxXQUFILEFBQWEsZ0JBQWUsTUFBNUIsQUFBaUM7b0JBQWpDO3NCQUFBO0FBQUE7U0FGSixBQUNFLEFBQ0UsQUFFRiw4Q0FBQSxjQUFBLFFBQUksV0FBSixBQUFjO29CQUFkO3NCQUFBLEFBQ0U7QUFERjt5QkFDRSxjQUFBOztvQkFBQTtzQkFBQSxBQUFJO0FBQUo7QUFBQSx5QkFBSSxjQUFBLE9BQUcsTUFBSCxBQUFRO29CQUFSO3NCQUFBO0FBQUE7U0FQZCxBQUNJLEFBQ0UsQUFJRSxBQUNFLEFBQUksQUFJVixnQ0FBQSxjQUFBOztvQkFBQTtzQkFBQSxBQUNHO0FBREg7QUFBQSxTQVhKLEFBV0ksQUFHQSxpQ0FBQSxBQUFDLG9DQUFTLEtBQUssS0FBQSxBQUFLLE1BQXBCLEFBQTBCO29CQUExQjtzQkFmTixBQUNFLEFBY0ksQUFHUDtBQUhPOzs7Ozs7RUFyQmdDLGdCQUFNLEE7O2tCQUEzQixBIiwiZmlsZSI6InVzZXJMb2dnZWRJbi5qcz9lbnRyeSIsInNvdXJjZVJvb3QiOiIvVXNlcnMva2F0aGVyaW5ldGhhaS9EZXZlbG9wbWVudC9oYWNrUlUvaGFja3J1LXNwcmluZzIwMTgifQ==

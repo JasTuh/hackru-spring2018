@@ -30,11 +30,13 @@
 .welcomeText {
   padding-top: 5%;
   font-size: 400%;
+  font-family: 'Montserrat', sans-serif;
+  color: #191414;
 }
 .welcomeContainer {
   margin: 0;
-  height: 400px;
-  background: #e74c3c;
+  height: 800px;
+  background: #1db954;
   width: 100%;
 }
 .welcomeLoginButton {
@@ -43,10 +45,20 @@
 }
 .welcomeAboutUsContainer {
   height: 100%;
-  background: #3498db;
+  background: #1db954;
+  font-family: 'Montserrat', sans-serif;
+  color: #191414;
 }
 .welcomeAboutUsInnerContainer {
   width: 80%;
+}
+
+.welcomeLoginButton {
+  border-radius: 15px !important;
+  background-color: #191414;
+  color: #1db954;
+  font-family: 'Montserrat', sans-serif;
+  border: 0px;
 }
 
 .playlistImage {
@@ -58,6 +70,7 @@
 .playlistName {
   padding-bottom: 10px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .playlistBlock .playlistImage {
@@ -74,5 +87,5 @@
 }
 
 .selected .playlistImage{
-    filter: blur(1px);
+  filter: blur(1px);
 }

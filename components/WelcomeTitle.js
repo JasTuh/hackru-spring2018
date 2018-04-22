@@ -7,7 +7,7 @@ export default () => (
     <div className="row">
       <div className="center-block text-center">
         <h1 className="welcomeText">
-          Spotify Playlist Manager
+          Spotifly
         </h1>
       </div>
     </div>

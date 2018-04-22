@@ -8,6 +8,7 @@ export default () => (
       <meta charSet="utf-8" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous" />
       <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
     </Head>
   </div>
 );
