@@ -9,6 +9,7 @@ export default class UserMenu extends Component {
       selectedPlaylists: [],
     };
     this.selectPlaylist = this.selectPlaylist.bind(this)
+    this.merge = this.merge.bind(this)
   }
   componentDidMount() {
     fetch('http://localhost:3000/newPlaylist', {credentials: "same-origin"})
@@ -18,6 +19,19 @@ export default class UserMenu extends Component {
         this.setState({playlists:json.body});
       })
       .catch((err) => {console.log(err)});
+  }
+
+    merge() {
+      console.log(this.state.selectedPlaylists);
+    fetch('http://localhost:3000/mergePlaylists', {
+      method:'POST', 
+      body:JSON.stringify({playlists:this.state.selectedPlaylists}),
+      credentials: 'same-origin',
+      headers: {
+      'user-agent': 'Mozilla/4.0 MDN Example',
+      'content-type': 'application/json'
+      },
+    }); 
   }
 
   selectPlaylist(playlist) {
@@ -46,6 +60,9 @@ export default class UserMenu extends Component {
     return (
       <div>
         {listItems}
+       <button onClick={this.merge}>
+            wheeee
+        </button>
       </div>
     );
   }

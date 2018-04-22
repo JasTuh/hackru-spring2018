@@ -7,7 +7,10 @@ const keys = require('./keys.json');
 const request = require('request');
 const cookieParser = require('cookie-parser');
 const SpotifyWebApi = require('spotify-web-api-node')
-
+var spotifyApi = new SpotifyWebApi({
+    clientId : keys.client_id,
+    clientSecret : keys.client_secret
+  });
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -66,7 +69,6 @@ function insertUserIntoDB(accessToken, refreshToken) {
   request.get(options, function(error, response, body) {
     const userID = parseInt(body.id, 10);
     //checkForUser(userID, accessToken, refreshToken);
-    console.log(userID);
   });
 }
 function handleLogin(req, res) {
@@ -107,26 +109,88 @@ function checkForCookies(req, res) {
 
 function newPlaylist(req, res) {
   const user = req.cookies.user;
-  console.log(user);
-  var spotifyApi = new SpotifyWebApi({
-    clientId : keys.client_id,
-    clientSecret : keys.client_secret
-  });
   spotifyApi.setAccessToken(user);
   spotifyApi.getMe()
     .then((data) => {
-      spotifyApi.getUserPlaylists(data.body.id).then((data2) => {
-        console.log(data2);
+      spotifyApi.getUserPlaylists(data.body.id, {limit:50}).then((data2) => {
         res.send(JSON.stringify(data2))})
       })
     .catch((err) => {console.log(err)});
 }
 
+
+function getAllSongs(userID, playlistID){
+  var songs = [];
+  var totalSongs = 0;
+  return spotifyApi.getPlaylist(userID,playlistID)
+    .then((pdata) => {
+      songs = songs.concat(pdata.body.tracks.items);
+      totalSongs = parseInt(pdata.body.tracks.total);
+      if (totalSongs > 100){
+        var offset = 100;
+        while (offset < totalSongs) {
+          spotifyApi.getPlaylist(userID,playlistID, {offset})
+            .then((pdata) => {
+              songs = songs.concat(pdata.body.tracks.items); 
+            })
+            .catch((err) => {console.log(err)})
+          offset += 100;
+        }
+        return songs;
+      } else {
+        return songs; 
+      }
+    })
+    .catch(err => {
+      console.log(err); 
+    });
+}
+function makePlaylist(allSongs, userID, name) {
+  // Create a private playlist
+  spotifyApi.createPlaylist(userID, name, { 'public' : false })
+    .then(function(data) {
+      const playlistID = data.body.id;
+      var i = 0;
+      while (i * 100 < allSongs.length){
+        spotifyApi.addTracksToPlaylist(userID, playlistID, allSongs.slice(100*i, 100*(i+1)));
+        i+=1;
+      }
+      console.log('Created playlist!');
+    }, function(err) {
+      console.log('Something went wrong!', err);
+    })
+    .catch(err => {console.log(err);});
+}
+
+function mergePlaylists(req, res) {
+  const playlists = req.body.playlists;
+  const user = req.cookies.user;
+  
+  spotifyApi.setAccessToken(user);
+  spotifyApi.getMe()
+    .then((data) => {
+      const userID = data.body.id;
+      const playListSongsP = playlists.map((playlistID) => {
+        return getAllSongs(userID, playlistID);
+      });
+      Promise.all(playListSongsP).then((playListSongs) => {
+        var allSongs = [];
+        playListSongs.forEach(ele => {
+          allSongs = allSongs.concat(ele); 
+        }) 
+        return allSongs;
+      }).then(allSongs => allSongs.map(song => song.track.uri))
+        .then(allSongs => {makePlaylist(allSongs, userID, 'test');})
+        .catch((err) => {console.log(err);});
+    })
+    .catch((err) => {console.log(err)});
+}
 co(function* () {
   yield app.prepare();
   const server = express();
   server.use(cookieParser());
   server.use(body.json());
+  server.post('/mergePlaylists', mergePlaylists);
   server.get('/login', login);
   server.get('/handleLogin', handleLogin);
   server.get('/newPlaylist', newPlaylist);
