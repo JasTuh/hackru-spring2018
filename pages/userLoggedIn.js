@@ -35,7 +35,7 @@ export default class userLoggedIn extends React.Component{
             {makingPlaylist}
           </p>
           <UserMenu url={this.props.url} />
-          <button onclick={this.MergeTest}>
+          <button onClick={this.MergeTest}>
             Activate Lasers
           </button>
         </Page>
