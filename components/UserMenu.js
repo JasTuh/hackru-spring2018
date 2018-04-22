@@ -26,7 +26,6 @@ export default class UserMenu extends Component {
       var index = this.state.selectedPlaylists.indexOf(playlist);
       if (index > -1) {
         this.state.selectedPlaylists.splice(index,1);
-
       }//remove it 
       else {
         this.state.selectedPlaylists.push(playlist);
@@ -41,7 +40,7 @@ export default class UserMenu extends Component {
     }
 
     const listItems = this.state.playlists.items.map((playlist) =>
-      <AlbumSquare key={playlist.id} playlist={playlist} clickedMethod={this.selectPlaylist(playlist.id)} childClass="col-md-3"/>
+      <AlbumSquare key={playlist.id} playlist={playlist} selected={this.state.selectedPlaylists.includes(playlist.id)} clickedMethod={this.selectPlaylist(playlist.id)} childClass="col-md-3"/>
     );
     return (
       <div>
@@ -52,8 +51,12 @@ export default class UserMenu extends Component {
 }
 
 function AlbumSquare(props){
+  var className = props.childClass + ' playlistBlock';
+  if (props.selected) {
+    className = className + ' selected';
+  }
 return (
-  <div className={props.childClass + ' playlistBlock'} onClick={props.clickedMethod}>
+  <div className={className} onClick={props.clickedMethod}>
     <AlbumImage playlist = {props.playlist}/>
     <h3 className="playlistName">{props.playlist.name}</h3>
   </div>

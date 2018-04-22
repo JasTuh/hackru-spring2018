@@ -43,5 +43,18 @@
   text-align: center;
 }
 
+.playlistBlock {
+  opacity: .6;
+}
 
+.playlistBlock:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.selected {
+  border: 3px solid #33FF33;
+  border-radius: 10px;
+  opacity: 1;
+}
 
