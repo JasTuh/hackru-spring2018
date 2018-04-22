@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
+import SpotifyRedirect from './SpotifyRedirect'
 
+const errMethod = (err) => console.log(err);
 export default class UserMenu extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +35,13 @@ export default class UserMenu extends Component {
       'user-agent': 'Mozilla/4.0 MDN Example',
       'content-type': 'application/json'
       },
-    });
+    }).then((res) => res.json())
+      .then((json) => {
+        this.setState({
+          url:json.spotify,
+        });
+      })
+      .catch(errMethod);
   }
 
   selectPlaylist(playlist) {
@@ -57,7 +65,9 @@ export default class UserMenu extends Component {
     if (!this.state.playlists.items) {
       return (<div />);
     }
-
+    if (this.state.url){
+      return (<SpotifyRedirect url={this.state.url} />);
+    }
     const listItems = this.state.playlists.items.map((playlist) =>
       <AlbumSquare key={playlist.id} playlist={playlist} selected={this.state.selectedPlaylists.includes(playlist.id)} clickedMethod={this.selectPlaylist(playlist.id)} childClass="col-md-3"/>
     );
