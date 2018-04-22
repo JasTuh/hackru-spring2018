@@ -132,7 +132,7 @@ function getAllSongs(userID, playlistID){
       console.log(err); 
     });
 }
-function makePlaylist(allSongs, userID, name) {
+function makePlaylist(allSongs, userID, name, res) {
   // Create a private playlist
   
   console.log(allSongs.length);
@@ -144,6 +144,7 @@ function makePlaylist(allSongs, userID, name) {
         spotifyApi.addTracksToPlaylist(userID, playlistID, allSongs.slice(100*i, 100*(i+1)));
         i+=1;
       }
+      res.send(JSON.stringify(data.body.external_urls));
       console.log('Created playlist!');
     }, function(err) {
       console.log('Something went wrong!', err);
@@ -169,7 +170,7 @@ function mergePlaylists(req, res) {
         }) 
         return allSongs;
       }).then(allSongs => allSongs.map(song => song.track.uri))
-        .then(allSongs => {makePlaylist(allSongs, userID, playlistName);})
+        .then(allSongs => {makePlaylist(allSongs, userID, playlistName, res);})
         .catch((err) => {console.log(err);});
     })
     .catch((err) => {console.log(err)});
