@@ -126,20 +126,7 @@ function getAllSongs(userID, playlistID){
     .then((pdata) => {
       songs = songs.concat(pdata.body.tracks.items);
       totalSongs = parseInt(pdata.body.tracks.total);
-      if (totalSongs > 100){
-        var offset = 100;
-        while (offset < totalSongs) {
-          spotifyApi.getPlaylist(userID,playlistID, {offset})
-            .then((pdata) => {
-              songs = songs.concat(pdata.body.tracks.items); 
-            })
-            .catch((err) => {console.log(err)})
-          offset += 100;
-        }
-        return songs;
-      } else {
-        return songs; 
-      }
+      return songs; 
     })
     .catch(err => {
       console.log(err); 
@@ -147,6 +134,8 @@ function getAllSongs(userID, playlistID){
 }
 function makePlaylist(allSongs, userID, name) {
   // Create a private playlist
+  
+  console.log(allSongs.length);
   spotifyApi.createPlaylist(userID, name, { 'public' : false })
     .then(function(data) {
       const playlistID = data.body.id;
